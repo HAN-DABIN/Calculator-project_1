@@ -1,4 +1,4 @@
-package caculator;
+package caculatorStep1;
 
 import java.util.Scanner;
 
@@ -7,6 +7,7 @@ public class App {
     public static void main(String[] args) {
         // 스캐너 선언
         Scanner scanner = new Scanner(System.in);
+        // calcultator 클래스 객체 생성
 
         // 계산기 전체 반복문
         while (true) {
@@ -60,9 +61,9 @@ public class App {
                     break;
                 }
             }
-            // 결과 값 초기화
-            int result = 0;
+            // 메서드 호출
 
+            int result = 0;
             if (operator == '+') {
                 result = num1 + num2;
             } else if (operator == '-') {
@@ -72,6 +73,7 @@ public class App {
             } else if (operator == '/') {
                 result = num1 / num2;
             }
+
             System.out.println("결과: " + num1 + operator + num2 + " = " + result);
 
             System.out.println("계속 계산하시겠습니까? (yes - 계속 계산 / exit - 종료)");
