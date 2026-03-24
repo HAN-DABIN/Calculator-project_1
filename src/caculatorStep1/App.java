@@ -61,8 +61,8 @@ public class App {
                     break;
                 }
             }
-            // 메서드 호출
 
+            // int 초기화
             int result = 0;
             if (operator == '+') {
                 result = num1 + num2;
@@ -88,7 +88,6 @@ public class App {
             }
         }
     }
-
 }
 
 
