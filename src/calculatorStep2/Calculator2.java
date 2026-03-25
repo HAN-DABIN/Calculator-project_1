@@ -29,7 +29,6 @@ public class Calculator2 {
     public List<Integer> getResult() {
     return this.resultList;
     }
-    // setter
 
     // 첫번째 기록 삭제
     public void removeResult() {
