@@ -33,55 +33,13 @@ public class App2 {
                 System.out.println("=== 계산을 시작합니다. ===");
                 // 계산기 전체 반복문
                 while (true) {
-                    int num1;
-                    // 첫번째 숫자 입력 반복문
-                    while (true) {
-                        System.out.print("첫 번째 숫자를 입력하세요: ");
-                        // 숫자1 입력 받기
-                        num1 = scanner.nextInt();
-                        // 개행문자 제거
-                        scanner.nextLine();
-                        // num1이 0보다 크면 반복문 종료
-                        if (num1 > 0) {
-                            break;
-                            // 아니면 문구 출력 후 재입력
-                        } else {
-                            System.out.println("양의 정수를 입력해주세요.");
-                        }
-                    }
+                    int num1 = calculator.firstnum(scanner, "첫 번째 숫자를 입력하세요.: ");
 
-                    char operator;
-                    // 사칙연산 반복문
-                    while (true) {
-                        System.out.print("사칙연산 기호(+, -, *, /)를 입력하세요: ");
-                        operator = scanner.next().charAt(0);
-                        // +, -, *, / 입력시 반복문 종료
-                        if (operator == '+' || operator == '-' || operator == '*' || operator == '/') {
-                            break;
-                            // 아니면 문구 출력 후 재입력
-                        } else {
-                            System.out.println("지원하지 않는 연산자입니다.");
-                        }
-                    }
-                    int num2;
-                    // 두 번째 숫자 입력 반복문
-                    while (true) {
-                        System.out.print("두 번째 숫자를 입력하세요: ");
-                        // 숫자2 입력받기
-                        num2 = scanner.nextInt();
-                        // 개행문자 제거
-                        scanner.nextLine();
-                        // 만약 /과 0이 같이 쓰이면 문구 출력 후 재입력
-                        if (operator == '/' && num2 == 0) {
-                            System.out.println("0으로 나눌 수 없습니다. 다른 숫자를 입력해주세요.");
-                            // num2가 0보다 작으면 문구 출력 후 재입력
-                        } else if (num2 < 0) {
-                            System.out.println("양의 정수를 입력해주세요.");
-                            // 둘 다 아니면 반복문 종료
-                        } else {
-                            break;
-                        }
-                    }
+                    char operator = calculator.operate(scanner, "연산자(+, -, *, /)를 입력해주세요.");
+
+                    int num2 = calculator.secondnum(scanner, "두 번쩨 숫자를 입력하세요.: ", operator);
+
+
                     // 메서드 호출
                     int result = calculator.calculate(num1, num2, operator);
 
@@ -114,8 +72,8 @@ public class App2 {
                         System.out.println(newCal);
                         break;
                     case 2:
-                        // setter 활용
                         System.out.println("첫 번째 계산 기록을 삭제합니다");
+                        // 메서드 활용
                             calculator.removeResult();
                             break;
                         }
