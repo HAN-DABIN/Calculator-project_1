@@ -1,8 +1,6 @@
 # Calculator-project_1
 CH 2 계산기 과제
 
-******
-
 ![img.png](img.png)
 
 ### ✅ 계산기 성능
